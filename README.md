@@ -29,7 +29,7 @@ https://github.com/trishamine/Zircon-Media-Player.git
 
 Google Play (Beta) (Instructions below) [NOT AVAIABLE NOW]
 
-Or build from source (see below)
+[Or download from github](https://github.com/trishamine/Zircon-Media-Player/releases/download/stable/Zircon-1.0-Stable.apk)
 
 
 # Join the Beta
