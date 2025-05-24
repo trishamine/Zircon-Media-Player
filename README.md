@@ -4,7 +4,7 @@ Zircon is an open-source music player for Android devices, supporting versions f
 
 Originally created for my personal tablet running Android 4.4, Zircon has proven to work well on modern devices too (tested on Android 14).
 
-
+---
 
 # Features
 
@@ -16,10 +16,11 @@ Originally created for my personal tablet running Android 4.4, Zircon has proven
 
 • Local MP3 playback
 
+---
 
 # Download
 
-Google Play (Beta) (Instructions below)
+Google Play (Beta) (Instructions below) [NOT AVAIABLE NOW]
 
 Or build from source (see below)
 
@@ -43,8 +44,8 @@ To join the beta testing program on Google Play:
 
 # Links
 
-GitHub Repository
+[GitHub Repository](https://github.com/trishamine/Zircon-Media-Player)
 
-Contact me on Telegram
+[Contact me on Telegram](https://t.me/racer55)
 
-Join the Discord
+Join the Discord [NOT AVAIABLE NOW]
