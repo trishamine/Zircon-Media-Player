@@ -31,7 +31,7 @@
             android:layout_marginStart="8dp" />
 
         <TextView
-            android:text="Сейчас исполняется"
+            android:text="@string/playing_now"
             android:textColor="#ffffff"
             android:textSize="18sp"
             android:layout_marginStart="8dp"
@@ -57,7 +57,7 @@
             android:id="@+id/albumArtPlaceholder"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Обложка не найдена"
+            android:text="@string/preview_not_found"
             android:textColor="#bbbbbb"
             android:visibility="gone" />
     </FrameLayout>
@@ -74,7 +74,7 @@
             android:id="@+id/playerSongTitle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Имя трека"
+            android:text="@string/track_name"
             android:textColor="#ffffff"
             android:textSize="16sp"
             android:maxLines="2"
@@ -84,7 +84,7 @@
             android:id="@+id/playerSongArtist"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Исполнитель"
+            android:text="@string/artist_name"
             android:textColor="#cccccc"
             android:textSize="14sp"
             android:textAlignment="center" />

@@ -2,16 +2,20 @@ package com.tm.zircon
 
 import android.Manifest
 import android.app.Activity
+import android.content.Context
 import android.content.Intent
 import android.content.pm.PackageManager
+import android.content.res.Configuration
 import android.media.MediaMetadataRetriever
 import android.os.*
 import android.provider.Settings
+import android.view.Menu
 import android.view.MenuItem
 import android.widget.*
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
 import java.io.File
+import java.util.Locale
 
 class MainActivity : Activity() {
 
@@ -36,6 +40,7 @@ class MainActivity : Activity() {
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
+        applySavedLocale()
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
@@ -81,6 +86,54 @@ class MainActivity : Activity() {
         checkPermissionsAndLoad()
         setupFileList()
     }
+
+    private fun applySavedLocale() {
+        val prefs = getSharedPreferences("ZirconPrefs", MODE_PRIVATE)
+        val langCode = prefs.getString("app_lang", "") ?: return
+        if (langCode.isNotEmpty()) {
+            val locale = Locale(langCode)
+            Locale.setDefault(locale)
+            val config = Configuration()
+            config.setLocale(locale)
+            baseContext.resources.updateConfiguration(config, baseContext.resources.displayMetrics)
+        }
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        return when (item.itemId) {
+            R.id.menu_about -> {
+                startActivity(Intent(this, AboutActivity::class.java))
+                true
+            }
+            R.id.menu_language -> {
+                startActivity(Intent(this, LanguageActivity::class.java))
+                true
+            }
+            else -> super.onOptionsItemSelected(item)
+        }
+    }
+
+    override fun attachBaseContext(newBase: Context) {
+        val prefs = newBase.getSharedPreferences("ZirconPrefs", MODE_PRIVATE)
+        val langCode = prefs.getString("app_lang", "ru") ?: "ru"
+        val locale = Locale(langCode)
+        Locale.setDefault(locale)
+
+        val config = Configuration()
+        config.setLocale(locale)
+
+        val context = newBase.createConfigurationContext(config)
+        super.attachBaseContext(context)
+    }
+
+
+
+
+    override fun onCreateOptionsMenu(menu: Menu): Boolean {
+        menuInflater.inflate(R.menu.main_menu, menu)
+        return true
+    }
+
 
     private fun checkPermissionsAndLoad() {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R && !Environment.isExternalStorageManager()) {
@@ -192,7 +245,4 @@ class MainActivity : Activity() {
         seekBarHandler.removeCallbacks(seekBarRunnable)
     }
 
-    override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        return super.onOptionsItemSelected(item)
-    }
 }

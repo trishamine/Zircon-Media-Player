@@ -5,15 +5,30 @@
     android:layout_height="match_parent"
     android:background="@android:drawable/screen_background_dark">
 
+    <!-- Кнопки выбора хранилища -->
+    <LinearLayout
+        android:id="@+id/storageButtons"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:background="#333333"
+        android:padding="8dp"
+        android:layout_alignParentTop="true">
+
+    </LinearLayout>
+
+    <!-- Список файлов -->
     <ListView
         android:id="@+id/listView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:layout_below="@id/storageButtons"
         android:layout_above="@+id/nowPlayingBar"
         android:divider="@android:color/darker_gray"
         android:dividerHeight="1dp"
         android:cacheColorHint="#000000" />
 
+    <!-- Нижняя панель воспроизведения -->
     <LinearLayout
         android:id="@+id/nowPlayingBar"
         android:layout_width="match_parent"
@@ -72,13 +87,12 @@
                 app:tint="#ffffff" />
         </LinearLayout>
 
-        <!-- Добавлен SeekBar снизу -->
+        <!-- SeekBar проигрывания -->
         <SeekBar
             android:id="@+id/seekBar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="4dp" />
-
     </LinearLayout>
 
 </RelativeLayout>

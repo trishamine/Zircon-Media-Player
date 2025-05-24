@@ -2,6 +2,7 @@ package com.tm.zircon
 
 import android.app.Activity
 import android.content.Context
+import android.content.res.Configuration
 import android.media.AudioManager
 import android.media.MediaMetadataRetriever
 import android.os.Bundle
@@ -10,6 +11,7 @@ import android.os.Looper
 import android.view.View
 import android.widget.*
 import java.io.File
+import java.util.Locale
 
 class PlayerActivity : Activity() {
 
@@ -83,6 +85,19 @@ class PlayerActivity : Activity() {
         })
 
         loadTrack(currentFile!!)
+    }
+
+    override fun attachBaseContext(newBase: Context) {
+        val prefs = newBase.getSharedPreferences("ZirconPrefs", MODE_PRIVATE)
+        val langCode = prefs.getString("app_lang", "ru") ?: "ru"
+        val locale = Locale(langCode)
+        Locale.setDefault(locale)
+
+        val config = Configuration()
+        config.setLocale(locale)
+
+        val context = newBase.createConfigurationContext(config)
+        super.attachBaseContext(context)
     }
 
     private fun loadTrack(file: File) {

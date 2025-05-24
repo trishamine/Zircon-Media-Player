@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Zircon</string>
+    <string name="up">Hoch</string>
+    <string name="unknown">Unknown</string>
+    <string name="track_not_selected">Track nicht ausgewählt</string>
+    <string name="permission_hint">Finde Zircon und gib permission. Dann restarte die app.</string>
+    <string name="unable_open_settings">Einstellungen konnten nicht geöffnet werden.</string>
+    <string name="permission_denied">Permission denied.</string>
+    <string name="about">Über die app</string>
+    <string name="language">Sprache</string>
+    <string name="select_language">Wählen sie die Sprache</string>
+    <string name="artist_name">Artist name</string>
+    <string name="track_name">Name des Tracks</string>
+    <string name="preview_not_found">Preview wurde nicht gefunden</string>
+    <string name="playing_now">Spielt jetzt</string>
+    <string name="tracks_count">Tracks: %1$d</string>
+    <string name="menu_show_empty_folders">Leere Ordner anzeigen</string>
+</resources>

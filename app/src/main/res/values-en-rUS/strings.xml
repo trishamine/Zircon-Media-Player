@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">Zircon</string>
     <string name="up">Up</string>
@@ -9,10 +10,10 @@
     <string name="about">About</string>
     <string name="language">Language</string>
     <string name="select_language">Select Language</string>
-    <string name="artist_name">Исполнитель</string>
-    <string name="track_name">Имя трека</string>
-    <string name="preview_not_found">Обложка не найдена</string>
-    <string name="playing_now">Сейчас исполняется</string>
+    <string name="artist_name">Artist name</string>
+    <string name="track_name">Track name</string>
+    <string name="preview_not_found">Preview not found</string>
+    <string name="playing_now">Playing now</string>
     <string name="tracks_count">Tracks: %1$d</string>
     <string name="menu_show_empty_folders">Show empty folders</string>
 </resources>

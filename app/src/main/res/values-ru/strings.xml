@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Zircon</string>
+    <string name="up">Вверх</string>
+    <string name="unknown">Неизвестно</string>
+    <string name="track_not_selected">Трек не выбран</string>
+    <string name="permission_hint">Найдите Zircon и разрешите доступ. Затем перезапустите приложение.</string>
+    <string name="unable_open_settings">Не удалось открыть настройки</string>
+    <string name="permission_denied">Разрешения не предоставлены</string>
+    <string name="about">О программе</string>
+    <string name="language">Язык</string>
+    <string name="select_language">Выберите язык</string>
+    <string name="artist_name">Исполнитель</string>
+    <string name="track_name">Имя трека</string>
+    <string name="preview_not_found">Обложка не найдена</string>
+    <string name="playing_now">Сейчас исполняется</string>
+    <string name="tracks_count">Треков: %1$d</string>
+    <string name="menu_show_empty_folders">Показывать пустые папки</string>
+</resources>
