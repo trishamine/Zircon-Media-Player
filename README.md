@@ -44,6 +44,6 @@ To join the beta testing program on Google Play:
 
 [GitHub Repository](https://github.com/trishamine/Zircon-Media-Player)
 
-[Contact me on Telegram](https://t.me/racer55)
+[Contact me on Telegram](https://t.me/debianubuntu)
 
 Join the Discord [NOT AVAIABLE NOW]
