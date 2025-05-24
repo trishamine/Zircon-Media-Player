@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#121212"
+    android:padding="16dp">
+
+    <!-- Верхняя панель -->
+    <LinearLayout
+        android:id="@+id/topBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:padding="8dp">
+
+        <ImageButton
+            android:id="@+id/backButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@android:drawable/ic_menu_revert"
+            android:background="@android:color/transparent"
+            app:tint="#ffffff" />
+
+        <ImageView
+            android:src="@drawable/ic_zircon"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_marginStart="8dp" />
+
+        <TextView
+            android:text="Сейчас исполняется"
+            android:textColor="#ffffff"
+            android:textSize="18sp"
+            android:layout_marginStart="8dp"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content" />
+    </LinearLayout>
+
+    <!-- Обложка -->
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="250dp"
+        android:layout_marginTop="24dp"
+        android:gravity="center">
+
+        <ImageView
+            android:id="@+id/albumArt"
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:scaleType="centerCrop"
+            android:visibility="visible" />
+
+        <TextView
+            android:id="@+id/albumArtPlaceholder"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Обложка не найдена"
+            android:textColor="#bbbbbb"
+            android:visibility="gone" />
+    </FrameLayout>
+
+    <!-- Название и исполнитель -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginTop="16dp"
+        android:gravity="center_horizontal">
+
+        <TextView
+            android:id="@+id/playerSongTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Имя трека"
+            android:textColor="#ffffff"
+            android:textSize="16sp"
+            android:maxLines="2"
+            android:textAlignment="center" />
+
+        <TextView
+            android:id="@+id/playerSongArtist"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Исполнитель"
+            android:textColor="#cccccc"
+            android:textSize="14sp"
+            android:textAlignment="center" />
+    </LinearLayout>
+
+    <!-- Прогресс -->
+    <SeekBar
+        android:id="@+id/playerSeekBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp" />
+
+    <LinearLayout
+        android:id="@+id/timeLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="4dp"
+        android:paddingHorizontal="8dp">
+
+        <TextView
+            android:id="@+id/timeStart"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="00:00"
+            android:textColor="#cccccc"
+            android:textSize="12sp" />
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:layout_weight="1" />
+
+        <TextView
+            android:id="@+id/timeEnd"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="00:00"
+            android:textColor="#cccccc"
+            android:textSize="12sp" />
+    </LinearLayout>
+
+    <!-- Кнопки управления -->
+    <LinearLayout
+        android:id="@+id/playerControls"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:layout_marginTop="16dp">
+
+        <ImageButton
+            android:id="@+id/buttonPrev"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@android:drawable/ic_media_previous"
+            android:background="@android:color/transparent"
+            app:tint="#ffffff" />
+
+        <ImageButton
+            android:id="@+id/buttonPlayPause"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@android:drawable/ic_media_play"
+            android:layout_marginHorizontal="24dp"
+            android:background="@android:color/transparent"
+            app:tint="#ffffff" />
+
+        <ImageButton
+            android:id="@+id/buttonNext"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@android:drawable/ic_media_next"
+            android:background="@android:color/transparent"
+            app:tint="#ffffff" />
+    </LinearLayout>
+
+    <!-- Громкость -->
+    <LinearLayout
+        android:id="@+id/volumeControl"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:layout_marginTop="16dp">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@android:drawable/ic_lock_silent_mode_off"
+            app:tint="#ffffff" />
+
+        <SeekBar
+            android:id="@+id/volumeSeekBar"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="8dp" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@android:drawable/ic_lock_silent_mode"
+            app:tint="#ffffff" />
+    </LinearLayout>
+
+</LinearLayout>

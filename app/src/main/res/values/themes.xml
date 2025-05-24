@@ -1,0 +1,3 @@
+<resources>
+    <style name="Theme.Zircon" parent="android:Theme.Holo" />
+</resources>
