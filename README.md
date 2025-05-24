@@ -5,6 +5,15 @@ Zircon is an open-source music player for Android devices, supporting versions f
 Originally created for my personal tablet running Android 4.4, Zircon has proven to work well on modern devices too (tested on Android 14).
 
 
+# Open in Android Studio
+
+To open it in Android Studio, you need to click the "Clone Repository" button, and then paste this link:
+
+```
+https://github.com/trishamine/Zircon-Media-Player.git
+```
+
+
 # Features
 
 • Clean and lightweight Holo-style UI
