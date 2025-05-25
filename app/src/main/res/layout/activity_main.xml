@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@android:drawable/screen_background_dark">
+    >
 
     <!-- Кнопки выбора хранилища -->
     <LinearLayout
@@ -11,7 +11,6 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:background="#333333"
         android:padding="8dp"
         android:layout_alignParentTop="true">
 
@@ -22,11 +21,11 @@
         android:id="@+id/listView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_below="@id/storageButtons"
         android:layout_above="@+id/nowPlayingBar"
         android:divider="@android:color/darker_gray"
-        android:dividerHeight="1dp"
-        android:cacheColorHint="#000000" />
+        android:dividerHeight="1dp"/>
+    <!--android:layout_below="@id/storageButtons" -->
+<!--    android:cacheColorHint="#000000" / -->
 
     <!-- Нижняя панель воспроизведения -->
     <LinearLayout

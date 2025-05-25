@@ -16,4 +16,5 @@
     <string name="playing_now">Spielt jetzt</string>
     <string name="tracks_count">Tracks: %1$d</string>
     <string name="menu_show_empty_folders">Leere Ordner anzeigen</string>
+    <string name="language_changed">Sprache wurde geändert</string>
 </resources>
