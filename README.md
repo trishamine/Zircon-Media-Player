@@ -10,7 +10,7 @@ Originally created for my personal tablet running Android 4.4, Zircon has proven
 
 [![Latest stable](https://img.shields.io/badge/Download-Latest%20stable-blue?logo=github&logoColor=%23FFFFFF)](https://github.com/trishamine/Zircon-Media-Player/releases/download/stable/Zircon-1.0-Stable.apk)
 
-[![Latest beta](https://img.shields.io/badge/Download-Latest%20beta-yellow?logo=github&logoColor=%23FFFFFF)](https://github.com/trishamine/Zircon-Media-Player/releases/download/v1.1-beta-02/Zircon-v1.1-beta-02.apk)
+[![Latest beta](https://img.shields.io/badge/Download-Latest%20beta-yellow?logo=github&logoColor=%23FFFFFF)](https://github.com/trishamine/Zircon-Media-Player/releases/download/v1.1-beta-03/Zircon-v1.1-beta-03.apk)
 
 # Open in Android Studio
 
