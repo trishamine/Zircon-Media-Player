@@ -16,7 +16,7 @@
         android:label="@string/app_name"
         android:roundIcon="@drawable/ic_zircon"
         android:supportsRtl="true"
-        android:theme="@style/Theme.Zircon"
+        android:theme="@style/Theme.NoOverlap"
         tools:targetApi="31">
 
         <activity android:name=".MainActivity"

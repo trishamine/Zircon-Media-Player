@@ -66,13 +66,18 @@ class MainActivity : Activity() {
         }
 
         openPlayerButton.setOnClickListener {
+            val intent = Intent(this, PlayerActivity::class.java)
+
+            // Если трек выбран — передаём путь
             currentTrack?.let { file ->
-                val intent = Intent(this, PlayerActivity::class.java)
                 intent.putExtra("trackPath", file.absolutePath)
                 intent.putExtra("trackDir", currentDir.absolutePath)
-                startActivity(intent)
-            } ?: Toast.makeText(this, "Трек не выбран", Toast.LENGTH_SHORT).show()
+            }
+
+            startActivity(intent)
+            overridePendingTransition(R.anim.slide_in_bottom, 0)
         }
+
 
         seekBar.setOnSeekBarChangeListener(object : SeekBar.OnSeekBarChangeListener {
             override fun onProgressChanged(sb: SeekBar?, progress: Int, fromUser: Boolean) {
@@ -96,6 +101,18 @@ class MainActivity : Activity() {
             val config = Configuration()
             config.setLocale(locale)
             baseContext.resources.updateConfiguration(config, baseContext.resources.displayMetrics)
+        }
+    }
+
+    private fun showTrackNotSelectedToast() {
+        val toastView = layoutInflater.inflate(R.layout.custom_toast, null)
+        val textView = toastView.findViewById<TextView>(R.id.toastText)
+        textView.text = "Трек не выбран"
+
+        Toast(this).apply {
+            duration = Toast.LENGTH_SHORT
+            view = toastView
+            show()
         }
     }
 

@@ -64,10 +64,25 @@ class PlayerActivity : Activity() {
         val trackDir = intent.getStringExtra("trackDir")
 
         if (trackPath == null || trackDir == null) {
-            Toast.makeText(this, "Ошибка загрузки трека", Toast.LENGTH_SHORT).show()
-            finish()
+            // Нет трека — просто отображаем пустые значения
+            songTitle.text = "Неизвестно"
+            songArtist.text = "Неизвестно"
+            timeEnd.text = "00:00"
+            timeStart.text = "00:00"
+            seekBar.max = 100
+            seekBar.progress = 0
+            albumArt.visibility = View.GONE
+            albumArtPlaceholder.visibility = View.VISIBLE
+
+            // При нажатии на play — показать красивый кастомный Toast
+            playPauseButton.setOnClickListener {
+                showCustomToast("Трек не выбран")
+            }
+
             return
         }
+
+
 
         currentFile = File(trackPath)
         currentDir = File(trackDir)
@@ -86,6 +101,56 @@ class PlayerActivity : Activity() {
 
         loadTrack(currentFile!!)
     }
+
+    private fun showCustomToast(message: String) {
+        val toastLayout = layoutInflater.inflate(R.layout.toast_custom, null)
+        toastLayout.findViewById<TextView>(R.id.toastText).text = message
+
+        val toast = Toast(applicationContext)
+        toast.duration = Toast.LENGTH_SHORT
+        toast.view = toastLayout
+        toast.show()
+    }
+
+
+    private fun setupEmptyUI() {
+        songTitle.text = "Неизвестно"
+        songArtist.text = "Неизвестно"
+        timeStart.text = "00:00"
+        timeEnd.text = "00:00"
+        seekBar.max = 1
+        seekBar.progress = 0
+        albumArt.visibility = View.GONE
+        albumArtPlaceholder.visibility = View.VISIBLE
+
+        playPauseButton.setOnClickListener {
+            showTrackNotSelectedToast()
+        }
+
+        buttonNext.setOnClickListener {
+            showTrackNotSelectedToast()
+        }
+
+        buttonPrev.setOnClickListener {
+            showTrackNotSelectedToast()
+        }
+
+        seekBar.setOnSeekBarChangeListener(null)
+    }
+
+    private fun showTrackNotSelectedToast() {
+        val toastView = layoutInflater.inflate(R.layout.custom_toast, null)
+        val textView = toastView.findViewById<TextView>(R.id.toastText)
+        textView.text = "Трек не выбран"
+
+        Toast(this).apply {
+            duration = Toast.LENGTH_SHORT
+            view = toastView
+            show()
+        }
+    }
+
+
 
     override fun attachBaseContext(newBase: Context) {
         val prefs = newBase.getSharedPreferences("ZirconPrefs", MODE_PRIVATE)
@@ -193,7 +258,6 @@ class PlayerActivity : Activity() {
     override fun onDestroy() {
         super.onDestroy()
         handler.removeCallbacks(updateRunnable)
-        // Не вызываем release() — MediaPlayerManager управляет MediaPlayer
     }
 
     private fun formatTime(ms: Int): String {
@@ -201,5 +265,15 @@ class PlayerActivity : Activity() {
         val min = sec / 60
         val secRemain = sec % 60
         return String.format("%02d:%02d", min, secRemain)
+    }
+
+    override fun finish() {
+        super.finish()
+        overridePendingTransition(0, R.anim.slide_out_bottom)
+    }
+
+    override fun onBackPressed() {
+        super.onBackPressed()
+        overridePendingTransition(0, R.anim.slide_out_bottom)
     }
 }
